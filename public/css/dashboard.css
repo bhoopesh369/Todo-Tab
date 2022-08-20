@@ -1,0 +1,87 @@
+
+body{
+    text-align: center;
+
+}
+
+.todos{
+    position: absolute;
+    width: 25%;
+    height: 84%;
+    right: 10px;
+    background-color: wheat;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.inside-todos{
+    background-color: black;
+    border-radius: 9px;
+    padding: 15px;
+    margin: 10px;
+}
+
+.timetable{
+    left: 10px
+}
+
+.search-bar{
+    background-color: wheat;
+    border-radius: 10px;
+    padding: 10px 10px 0px;
+    width: 35%;
+    height: 10%;
+    position: absolute;
+    left: 32%;
+    top: 40%;
+}
+
+.searchform{
+    margin-top: 13px;
+}
+
+.search{
+    width: 69%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+}
+
+.term{
+    background-color: black;
+    border: solid wheat;
+    position: absolute;
+    top: 60%;
+    left: 32%;
+    width: 35%;
+    height: 35%;
+    z-index: 1;
+}
+
+.item{
+    margin: 13px;
+}
+.itm{
+    color: white;
+
+}
+
+.box{
+    text-align: justify;
+}
+
+.day{
+    color: white;
+    font-size: 1.4rem;
+    position: relative;
+    left: 50px;
+    margin-bottom: 25px;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,92 @@
+<%- include('partials/header') %>
+<div class="container centered">
+  <h1>Register</h1>
+  <div class="row">
+    <div class="col">
+      <div>
+        <div class="loginform" >
+          <form action="/register" method="POST">
+            <div class="form">
+              <p for="name" class="label">Username</p>
+              <input type="name" class="inputlogin" name="username" placeholder=" Enter your name">
+            </div>
+            <div class="form">
+                <p for="email" class="label">E-mail</p>
+                <input type="email" class="inputlogin" name="email" placeholder=" Enter your email-Id">
+            </div>
+            <!-- <div class="form">
+              <p for="department" class="label">User-Type</p>
+              <select name="profile" class="inputlogin">
+                <option value="admin">Admin</option> 
+                <option value="designer">Designer</option>
+                <option value="client" selected>Client</option>
+              </select>
+            </div> -->
+            <div class="form">
+              <div class="center-block">
+                <p for="password" class="label">Password </p>
+                <!-- <input type="text" id="password" autocomplete="off" class="form-control input-lg"> -->
+                <input type="password" id="password" class="inputlogin" name="password" placeholder=" Create password">
+                <span class="show-pass" onclick="toggle()" onmouseover="toggle2()" onmouseleave="toggle3()">
+                  <span class="far fa-eye" onclick="myFunction(this)"></span>
+                </span>
+              </div>
+               <!-- <div class="meter"><progress max="100" value="0" id="meter"></progress></div> -->
+               
+               <p><span id="result"></span></p>
+              <div id="password-strength" class="progress">
+                <div id="password-strength" 
+                    class="progress-bar" 
+                    role="progressbar" 
+                    aria-valuenow="40" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100" 
+                    style="width:0%">
+                </div>
+              </div>
+              <label for="" >Strength</label>
+            </div>
+            <!-- <label>Profile Photo</label>>   -->
+            <!-- <input type="submit" value="Upload Photo">     -->
+        <ul class="list-unstyled">
+          <li class="">
+              <span class="low-upper-case">
+                  <i class="fas fa-circle" aria-hidden="true"></i>
+                  &nbsp;Lowercase &amp; Uppercase
+              </span>
+          </li>
+          <li class="">
+              <span class="one-number">
+                  <i class="fas fa-circle" aria-hidden="true"></i>
+                  &nbsp;Number (0-9)
+              </span> 
+          </li>
+          <li class="">
+              <span class="one-special-char">
+                  <i class="fas fa-circle" aria-hidden="true"></i>
+                  &nbsp;Special Character (!@#$%^&*)
+              </span>
+          </li>
+          <li class="">
+              <span class="eight-character">
+                  <i class="fas fa-circle" aria-hidden="true"></i>
+                  &nbsp;Atleast 8 Character
+              </span>
+          </li>
+      </ul>
+      <!-- <p for="prfile-pic" class="label">Profile photo</p>
+        <input class="pic" type="file" name="image" accept="image/*"> -->
+      <h3 style="color: red; animation: wiggle 1s;"><%= already %> </h3>
+      <button type="submit" class="btn reg-btn">Register</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/register.js"></script>
+
+<%- include('partials/header') %>

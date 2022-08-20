@@ -1,0 +1,92 @@
+<%- include('partials/header') %>
+
+<div class="container centered">
+
+    <!-- Todos -->
+    <div class="todos" id="todos">
+
+        <div class="inside-todos" >
+            <div class="box" id="heading">
+                <h3 class="day"><%= kindDay %></h3>
+            </div>
+        
+            <div class="box">
+                <% newListItem.forEach(function(item){ %>
+                    <form action="/delete" method="post">
+                       <div class="item">
+                           <input type="checkbox" name="checkbox" value="<%= item._id %>" onChange="this.form.submit()">
+                           <span class="itm"><%= item.name %> </span>
+                       </div>
+                       <input type="hidden" name="listName" value="<%= kindDay %>"></input>
+                    </form>
+                <% }); %>
+        
+               <form action="/todo" method="post" class="item">
+                   <input type="text" name="newItem" placeholder="New Item">
+           
+                   <button type="submit" name="list" value=<%= kindDay %> >+</button>
+               </form>
+            
+           </div>
+        </div>
+        
+    </div> 
+
+    <!-- TimeTable -->
+
+    <div class="todos timetable" id="timetable">
+        <div class="inside-todos">
+            <div class="box">
+                <% newListItem1.forEach(function(item){ %>
+                    <form action="" method="post">
+                       <div class="item">
+                           <!-- <input type="checkbox" name="checkbox" value="<%= item._id %>" onChange="this.form.submit()"> -->
+                           <span class="itm"><%= item.name %> </span>
+                       </div>
+                       <input type="hidden" name="listName" value="<%= kindDay %>"></input>
+                    </form>
+                <% }); %>
+            
+           </div>
+        </div>
+    </div>
+
+    <!-- SearchBar -->
+
+    <div class="search-bar" id="search-bar">
+        <div>
+            <!-- <script async src="https://cse.google.com/cse.js?cx=73bfcc95bff9f4ae8">
+            </script>
+            <div class="gcse-search"></div> -->
+            <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+                <!-- <input name="sitesearch" type="hidden" value="google.com"> -->
+                <input autocomplete="on" class="form-control search" name="q" placeholder=" Try searching something" required="required"  type="text">
+                <button class="button" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Terminal -->
+<div class="term">
+    <div class="terminal"></div>
+</div>
+
+   
+</div>
+
+<script>
+    $('.terminal').terminal({
+        hello: function(what) {
+            this.echo('Hello, ' + what + '. Wellcome to this terminal.');
+        },
+        color: function(col){
+            this.echo('Color changed to '+ col + '.');
+            document.getElementById("todos").style.backgroundColor = col;
+            document.getElementById("timetable").style.backgroundColor = col;
+            document.getElementById("search-bar").style.backgroundColor = col;
+        }
+
+    }, {
+        greetings: 'Web Terminal'
+    });
+</script>
